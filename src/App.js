@@ -19,7 +19,7 @@ const useFetch = url => {
 };
 
 export default () => {
-  const { responseJson, loading } = useFetch("http://localhost:8080/sozluk/topics");
+  const { responseJson, loading } = useFetch("https://hs-scrapper-backend.herokuapp.com/sozluk/topics");
   const baseUrl = "//www.eksisozluk.com";
 
   let topicList = "Loading...";
