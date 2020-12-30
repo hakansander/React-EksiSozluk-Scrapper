@@ -24,32 +24,32 @@ export default () => {
 
   let topicList = "Loading...";
   if(loading === false){
-      topicList = responseJson.data.topicList.map((topic, index) =>
-          <tr key={index}>
-              <td id='ordering'>{index + 1}</td>
-              <td>
-                  <a href={baseUrl + topic.topicUrl}>{topic.topicTitle}</a>
-              </td>
-              <td id='commentTotal'>{topic.commentTotal}</td>
-          </tr>
-      );
+    topicList = responseJson.data.topicList.map((topic, index) =>
+        <tr key={index}>
+          <td id='ordering'>{index + 1}</td>
+          <td>
+            <a href={baseUrl + topic.topicUrl}>{topic.topicTitle}</a>
+          </td>
+          <td id='commentTotal'>{topic.commentTotal}</td>
+        </tr>
+    );
   }
 
   return (
       <div>
         <div className='topic-list'>
-            <table class='styled-table'>
-                <thead>
-                    <tr>
-                        <th>Ordering</th>
-                        <th>Topic</th>
-                        <th>Total Comments</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {topicList}
-                </tbody>
-            </table>
+          <table class='styled-table'>
+            <thead>
+            <tr>
+              <th>Ordering</th>
+              <th>Topic</th>
+              <th>Total Comments</th>
+            </tr>
+            </thead>
+            <tbody>
+            {topicList}
+            </tbody>
+          </table>
         </div>
       </div>
   );
