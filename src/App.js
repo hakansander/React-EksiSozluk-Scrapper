@@ -8,7 +8,15 @@ const useFetch = url => {
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(async () => {
-    const response = await fetch(url);
+      const requestOptions = {
+          method: 'GET',
+          headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*',
+          }
+      };
+    const response = await fetch(url,requestOptions);
     const responseJson = await response.json();
     console.log(responseJson);
     setData(responseJson);
